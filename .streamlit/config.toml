@@ -1,0 +1,14 @@
+[theme]
+base = "light"
+primaryColor = "#B23A2A"
+backgroundColor = "#F4EEE2"
+secondaryBackgroundColor = "#EAE0CD"
+textColor = "#2A2420"
+font = "sans serif"
+
+[server]
+maxUploadSize = 10
+
+[client]
+# 오류가 나도 사용자 화면에 traceback(파일 경로 등)을 보여주지 않는다.
+showErrorDetails = "none"
