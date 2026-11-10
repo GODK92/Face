@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+:root {
+  --paper: #F4EEE2;
+  --paper-deep: #EAE0CD;
+  --card: #FBF8F1;
+  --ink: #2A2420;
+  --ink-soft: #5E544B;
+  --line: #D9CCB4;
+  --seal: #B23A2A;
+  --seal-soft: #F3DCD5;
+  --gold: #B8862F;
+}
+
+html, body, .stApp, .stApp p, .stApp label, .stApp li, .stApp button, .stApp input,
+[class^="gs-"], [class*=" gs-"] {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.stApp {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(178, 58, 42, 0.05), transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(184, 134, 47, 0.06), transparent 45%);
+  color: var(--ink);
+}
+
+.block-container {
+  max-width: 1100px;
+  padding-top: 4.5rem;
+  padding-bottom: 3rem;
+}
+
+/* ---------- 헤더 ---------- */
+.gs-hero {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 2px solid var(--ink);
+}
+.gs-seal {
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  background: var(--seal);
+  color: #FFF6EE;
+  border-radius: 8px;
+  font-family: 'Gowun Batang', serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.05;
+  text-align: center;
+  transform: rotate(-4deg);
+  box-shadow: inset 0 0 0 3px rgba(255, 246, 238, 0.35);
+}
+.gs-title, .stMarkdown .gs-title {
+  font-family: 'Gowun Batang', serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.gs-sub {
+  margin: 0.25rem 0 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+.gs-note {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0.15rem 0;
+  word-break: keep-all;
+}
+
+/* ---------- 섹션 ---------- */
+.gs-section {
+  font-family: 'Gowun Batang', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 1.8rem 0 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.gs-section::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.gs-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  animation: gs-fade 0.5s ease both;
+}
+
+/* ---------- 첫인상 ---------- */
+.gs-summary {
+  background: var(--ink);
+  color: #F7F0E3;
+  border-radius: 14px;
+  padding: 1.4rem 1.5rem;
+  animation: gs-fade 0.5s ease both;
+}
+.gs-summary-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  color: #D9C9AE;
+}
+.gs-summary-text {
+  font-family: 'Gowun Batang', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0.3rem 0 0.9rem;
+  line-height: 1.35;
+  word-break: keep-all;
+}
+.gs-pills { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.gs-pill {
+  background: var(--seal);
+  color: #FFF6EE;
+  border-radius: 999px;
+  padding: 0.28rem 0.8rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+/* ---------- 부위별 관상 ---------- */
+.gs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 0.8rem;
+}
+.gs-feature-head {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 700;
+  font-size: 1.02rem;
+  margin-bottom: 0.4rem;
+  color: var(--ink);
+}
+.gs-feature-icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  background: var(--seal-soft);
+  border-radius: 50%;
+  font-size: 1rem;
+}
+.gs-feature-body {
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+/* ---------- 운세 ---------- */
+.gs-fortune { display: grid; gap: 0.7rem; }
+.gs-fortune-row {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.3rem 1rem;
+  align-items: center;
+}
+.gs-fortune-name { font-weight: 700; color: var(--ink); }
+.gs-meter { display: flex; align-items: center; gap: 0.7rem; }
+.gs-stars { color: var(--gold); letter-spacing: 0.1em; font-size: 1.05rem; white-space: nowrap; }
+.gs-score { font-size: 0.85rem; color: var(--ink-soft); white-space: nowrap; }
+.gs-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--paper-deep);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.gs-bar > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--seal));
+  border-radius: 999px;
+}
+.gs-fortune-comment {
+  grid-column: 2;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ---------- 조언 ---------- */
+.gs-advice {
+  position: relative;
+  background: var(--card);
+  border-left: 4px solid var(--seal);
+  border-radius: 0 12px 12px 0;
+  padding: 1.2rem 1.4rem 1.2rem 3rem;
+  font-family: 'Gowun Batang', serif;
+  font-size: 1.12rem;
+  line-height: 1.8;
+  color: var(--ink);
+  word-break: keep-all;
+  animation: gs-fade 0.5s ease both;
+}
+.gs-advice::before {
+  content: "“";
+  position: absolute;
+  left: 0.9rem;
+  top: 0.2rem;
+  font-size: 2.8rem;
+  color: var(--seal);
+  font-family: 'Gowun Batang', serif;
+}
+
+/* ---------- 빈 상태 ---------- */
+.gs-empty {
+  border: 1.5px dashed var(--line);
+  border-radius: 14px;
+  padding: 2.2rem 1.4rem;
+  text-align: center;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+.gs-empty strong {
+  display: block;
+  font-family: 'Gowun Batang', serif;
+  font-size: 1.2rem;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+
+.gs-footer {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- Streamlit 위젯 ---------- */
+.stButton > button, .stDownloadButton > button {
+  border-radius: 10px;
+  font-weight: 700;
+  min-height: 2.9rem;
+}
+.stButton > button[kind="primary"] {
+  font-size: 1.05rem;
+  box-shadow: 0 4px 12px rgba(178, 58, 42, 0.25);
+}
+[data-testid="stFileUploaderDropzone"] {
+  background: var(--card);
+  border: 1.5px dashed var(--line);
+}
+[data-testid="stImage"] img {
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+@keyframes gs-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- 모바일 ---------- */
+@media (max-width: 640px) {
+  .block-container { padding-left: 1rem; padding-right: 1rem; padding-top: 4rem; }
+  .gs-title { font-size: 1.75rem; }
+  .gs-seal { width: 52px; height: 52px; font-size: 1.05rem; }
+  .gs-summary-text { font-size: 1.45rem; }
+  .gs-grid { grid-template-columns: 1fr; }
+  .gs-fortune-row { grid-template-columns: 1fr; }
+  .gs-fortune-comment { grid-column: 1; }
+  .gs-advice { padding-left: 2.6rem; font-size: 1.02rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gs-card, .gs-summary, .gs-advice { animation: none; }
+}
+
+/* ---------- 업로드 안내 ---------- */
+.gs-hint {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0.4rem 0 0;
+  word-break: keep-all;
+}
+/* Streamlit 기본 영문 안내("10MB per file • JPG...")는 위 한국어 안내로 대체 */
+[data-testid="stFileUploaderDropzoneInstructions"] small { display: none; }
